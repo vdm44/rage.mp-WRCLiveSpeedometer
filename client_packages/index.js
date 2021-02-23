@@ -1,0 +1,1 @@
+require('WRCLiveSpeedometer/index.js');
