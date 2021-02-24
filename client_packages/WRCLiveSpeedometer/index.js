@@ -9,6 +9,8 @@ mp.events.add("guiReady", () => {
     speedometer.active = true;
 });
 
+
+
 mp.events.add("render", () => {
     if(player.vehicle){
         if(player.vehicle.getPedInSeat(-1) === player.handle){

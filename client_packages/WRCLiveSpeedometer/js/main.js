@@ -7,29 +7,16 @@ function speedometerShow(){
 }
 
 
-function setRpmBar(prog){
-    document.styleSheets[0].addRule('#fillbar:after', `position: absolute;
-    right: 0;
-    top: 0px;
-    display: block;
-    content: '';
-    height: 100%;
-    width: ${prog}%;
-    background: rgb(70, 69, 71);
-    z-index: -1;`);
-}
-
-function rpmToProg(rpm){
+function setRpmBar(rpm){
     let prog = 85;
     if(rpm <= 0) return prog;
     prog -= rpm * 0.009;
     if(prog <= 0) prog = 0;
-    return prog;
+    $('#rpmbarright').css('width', `${prog}%`);
 }
 
 function speedometerUpdate(speed, rpm, gear){
-    let prog = rpmToProg(rpm);
-    setRpmBar(prog);
+    setRpmBar(rpm);
     switch(gear){
         case 0: gear = 'N'; break;
         case -1: gear = 'R'; break;

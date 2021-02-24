@@ -18,13 +18,25 @@ div{
 }
 
 
-#fillbar {
+#rpmbar{
     position: relative;
     display: block;
     width: 100%;
     height: 15%;
     background: linear-gradient(to right, #90ee90, yellow, yellow, red);
     z-index: 0;
+}
+
+#rpmbarright{
+    position: absolute;
+    right: 0;
+    top: 0px;
+    display: block;
+    content: '';
+    height: 100%;
+    width: 85%;
+    background: rgb(70, 69, 71);
+    z-index: -1;
 }
 
 .rpmtext#rpm{
@@ -36,18 +48,6 @@ div{
     width: 9%;
 }
 
-#fillbar:after {
-    position: absolute;
-    right: 0;
-    top: 0px;
-    display: block;
-    content: '';
-    height: 100%;
-    width: 85%;
-    background: rgb(70, 69, 71);
-    z-index: -1;
-}
-/* 1:%76   9:%4 一格9% 1000*/
 .rpmtext{
     font-size: 50%;
     font-weight: bold;
